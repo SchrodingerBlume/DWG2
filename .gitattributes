@@ -1,0 +1,11 @@
+# 跟踪所有 .psd 文件
+*.psd filter=lfs diff=lfs merge=lfs -text
+
+# 跟踪特定目录下的 .mp4 文件
+videos/*.mp4 filter=lfs diff=lfs merge=lfs -text
+
+# 跟踪单个文件
+bigfile.dat filter=lfs diff=lfs merge=lfs -text
+
+
+*.csv filter=lfs diff=lfs merge=lfs -text
