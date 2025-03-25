@@ -1,0 +1,36 @@
+EMT轨迹分析报告
+================
+
+1. 数据概况：
+   - 总细胞数： 1224 
+   - 分析基因数： 17 
+
+2. 伪时间分析结果：
+   - 伪时间范围： 0 至 8.441408 
+
+3. 基因相关性分析：
+         gene pseudotime_correlation
+TWIST2 TWIST2             0.61974657
+VIM       VIM             0.57859322
+TGFBR2 TGFBR2             0.55429777
+SNAI2   SNAI2             0.53089549
+TWIST1 TWIST1             0.48546596
+ZEB2     ZEB2             0.44589527
+ZEB1     ZEB1             0.37483269
+TGFB2   TGFB2             0.33936901
+CDH1     CDH1            -0.32620506
+SNAI1   SNAI1             0.25331521
+TGFB1   TGFB1             0.20953078
+TGFBR1 TGFBR1             0.18576329
+TGFB3   TGFB3             0.17642037
+SMAD2   SMAD2            -0.13146389
+SMAD4   SMAD4            -0.09533828
+SMAD3   SMAD3            -0.03230649
+SMAD7   SMAD7            -0.00554340
+
+4. 输出文件列表：
+   - integrated_data_with_pseudotime.csv
+   - gene_pseudotime_correlations.csv
+   - monocle3_umap.pdf
+   - monocle3_trajectory.pdf
+   - 各基因表达趋势图
