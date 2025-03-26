@@ -13,17 +13,18 @@ print("加载lib完毕===============================")
 
 # 读取数据
 # data_path <- "D:/Cambridge/monocle3/filtered_expression_for_monocle3.csv"
-data_path <- "H:/_python/DWG2/GNN部分/4.1_data.csv.T.csv.T_mu.csv.T.csv.归一化.csv"
+data_path <- "H:/_python/DWG2/GNN部分/4.1_data.csv.T.csv.归一化.csv"
 print("开始读取csv")
 
 expression_data <- read.csv(data_path, row.names = 1,check.names = FALSE)
+
 print("读取完毕")
 # print(colnames(expression_data))  # 输出所有列名
 
 # 准备cell_metadata（样本信息）
 cell_metadata <- data.frame(
-  row.names = rownames(expression_data),
-  mu = expression_data$mu
+  row.names = rownames(expression_data)
+  # mu = expression_data$mu
 )
 print(" 准备cell_metadata 完毕")
 
@@ -77,8 +78,14 @@ cds <- learn_graph(cds)
 print("基于mlr确定轨迹的起点")
 # 基于mlr确定轨迹的起点
 # 选择mlr最低的细胞作为起点（表示上皮状态）
-mu_values <- colData(cds)$mu
-start_cell <- which.min(mu_values) 
+# mu_values <- colData(cds)$mu
+# mu_values
+# start_cell <- which.min(mu_values) 
+# start_cell2 <- which.max(mu_values) 
+# CID3586_CID3586_CID3586_CID3586_CID3586_CID3586_CID3586_CID3586_CID3586_CID3586_CID3586_CID3586_CID3586_CID3586_CID3586_CID3586_CID3586_CID3586_CID3586_CID3586_CID3586_CID3586_CID3586_1_CID3921_AGCAGCCGTGGTCCGT
+end_cell<-9961
+# CID3586_CID3586_CID3586_CID3586_CID3586_CID3586_CID3586_CID3586_CID3586_CID3586_CID3586_CID3586_CID3586_CID3586_CID3586_CID3586_CID3586_CID3586_CID3586_CID3586_CID3586_CID3586_CID3586_CID3586_CID3586_CID3586_GTCGGGTGTGGTACAG
+start_cell<-5781
 cds <- order_cells(cds, root_cells = rownames(colData(cds))[start_cell])
 
 

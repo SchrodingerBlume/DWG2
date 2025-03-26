@@ -1,6 +1,6 @@
 import pandas as pd
 
-path1="GNN部分\\4.1_data.csv.T.csv.T_mu.csv.T.csv"
+path1="GNN部分\\4.1_data.csv.T.csv"
 path2=path1+".归一化.csv"
 # 读取CSV文件
 df = pd.read_csv(path1)

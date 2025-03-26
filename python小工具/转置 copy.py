@@ -1,6 +1,6 @@
 import csv
 
-p1="GNN部分\\4.1_data.csv"
+p1="GNN部分\data\8w行样本名称.txt"
 p2=p1+".T.csv"
 # 读取原始CSV文件
 with open(p1, 'r', newline='') as f_in:
