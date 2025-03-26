@@ -1,6 +1,6 @@
 import csv
 
-p1="GNN部分\\4.1_data.csv.T.csv.归一化.csv"
+p1="GNN部分\\3.1_ 候选物质index相关性高到低排序.txt"
 p2=p1+".T.csv"
 # 读取原始CSV文件
 with open(p1, 'r', newline='') as f_in:
@@ -15,3 +15,4 @@ with open(p2, 'w', newline='') as f_out:
     writer = csv.writer(f_out)
     writer.writerows(transposed)
 
+# print("转置完成！已保存至 output.csv")

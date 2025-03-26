@@ -13,13 +13,15 @@ print(f'Using device: {device}')
 # 数据加载
 
 print("读取降维后数据")
-path1 = "data_1.6w行.降维.csv"
+path1 = "GNN部分\data\data_1.6w行.降维.csv"
+pathGraph="GNN部分\\2.3_ graph2_abs_0.5_前两列.csv"
+pathOut="GNN部分\\3.1_ 候选物质index相关性高到低排序.txt"
 feature = pd.read_csv(path1, header=None)
 # 转换为Tensor并移动到设备（优化为float32类型）
 feature_tensor = torch.tensor(feature.values, dtype=torch.float32).to(device)
 
 print("读取graph结构")
-df = pd.read_csv('graph2_abs_0.5_前两列.csv', header=None, names=['source', 'target', ''])
+df = pd.read_csv(pathGraph, header=None, names=['source', 'target', ''])
 
 print("优化edge_index创建")
 # 合并为单一numpy数组再转换
@@ -69,7 +71,7 @@ embeddings = model.encode(data.x, data.edge_index).detach().cpu()
 import torch
 
 # 假设已知10种物质的索引为 known_indices (列表)
-known_indices = [224,716,830,1460,1514,1589,1931,1995,2128,2255,2256,2547,2548,2786,3018,3908,4518,4537,5021,6157,7716,8641,9037,9038,9404,9507,10767,10950,11096,11356,11429,12008,12039,12070,12350,12737,13421,13438,13446,13716,13872,13958,14103,14592,14613,14827,15360,15395]  # 示例索引
+known_indices = [12479, 8990, 2838, 11429, 10842, 14613, 2255, 5858, 12197, 8128, 9038, 5707, 7081, 1827, 13421, 13804, 13438, 11625, 12763, 6154, 11096, 13424]  # 示例索引
 known_embeddings = embeddings[known_indices]  # 提取已知嵌入
 
 # 聚合方法：均值（或加权均值、最大池化等）
@@ -93,7 +95,7 @@ for idx in sorted_indices:
         candidates.append(idx.item())
     if len(candidates) >= 100:  # 取Top 100候选
         break
-pathOut="候选物质index相关性高到低排序.txt"
+
 with open(pathOut,'w') as outfile:
     for index in candidates:
         outfile.write(f"{index},")

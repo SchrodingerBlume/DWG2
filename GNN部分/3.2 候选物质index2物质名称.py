@@ -1,8 +1,8 @@
 # 读取index.csv中的行号
-path1='候选物质index相关性高到低排序.txt'
-path2=path1+".txt"
-pathData='第一列.txt'
-with open('候选物质index相关性高到低排序.txt', 'r') as f:
+path1='GNN部分\\3.1_ 候选物质index相关性高到低排序.txt'
+path2="GNN部分\\3.2_ 候选物质index相关性高到低排序.txt.txt"
+pathData='GNN部分\data\\1.6w行第一列.txt'
+with open(path1, 'r') as f:
     line= f.readline()
     print(line)
     ll= line.split(",")

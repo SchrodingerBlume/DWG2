@@ -1,7 +1,7 @@
 import csv
 
-p1="GNN部分\\4.1_data.csv.T.csv.归一化.csv"
-p2=p1+".T.csv"
+p1="GNN部分\\3.2_ 候选物质index相关性高到低排序.txt.txt"
+p2="GNN部分\\3.3_ 候选物质index相关性高到低排序.txt.txt"
 # 读取原始CSV文件
 with open(p1, 'r', newline='') as f_in:
     reader = csv.reader(f_in)

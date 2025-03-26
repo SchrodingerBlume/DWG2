@@ -1,7 +1,7 @@
 import csv
 
-p1="GNN部分\\4.1_data.csv.T.csv.归一化.csv"
-p2=p1+".T.csv"
+p1="GNN部分\\5.3_data.csv"
+p2="GNN部分\\5.4_data.csv"
 # 读取原始CSV文件
 with open(p1, 'r', newline='') as f_in:
     reader = csv.reader(f_in)
